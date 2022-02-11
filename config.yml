@@ -1,0 +1,53 @@
+# https://github.com/ZimoLoveShuang/auto-submit 云函数部署参考
+# https://github.com/IceTiki/ruoli-sign-optimization 最新加密方式参考
+
+# 自动填报配置文件
+user:
+  #username 学号或者工号
+  username: 'xxxxx'
+  #tellphone 电话号码
+  tellphone: '186xxxxxxxx'
+  #address 地址，定位信息
+  address: xxxxxx
+  #email 接受通知消息的邮箱
+  email: xxxxx@xxxx
+  #lon 当前位置经度 可以在百度地图API获取自己地址的经纬度（最好精确到小数点后六位）
+  lon: 'xxx.xx'
+  #lat 当前位置纬度
+  lat: 'xxx.xx'
+  #school 学校全称
+  school: xxxx
+#今日校园相关配置
+cpdaily:
+  #表单组默认选项配置
+  defaults:
+    #表单默认选项配置，按顺序，注意，只有标必填项的才处理，不会配置就执行generate.py
+    #表单项类型，对应今日校园接口返回的fieldType字段，1代表文本，2代表单选，3代表多选，4代表图片
+    - default:
+        title: 本日您是否有发烧症状（体温37.3℃以上）
+        type: 2
+        value: 否
+    - default:
+        title: 前14天至今，您本人到过的地点（含途经）
+        type: 3
+        value: 未离开居住地
+    - default:
+        title: 前14天至今，您本人是否接触过以下人员
+        type: 3
+        value: 无相关接触史
+    - default:
+        title: 今天您本人的健康情况
+        type: 3
+        value: 健康，没有出现相关疾病症状
+    - default:
+        title: 今天您的家人身体健康情况
+        type: 3
+        value: 所有家人身体均健康，正常
+    - default:
+        title: 您今天的粤康码是
+        type: 2
+        value: 绿码
+    - default:
+        title: 您今天的户籍所在地健康码是
+        type: 2
+        value: 绿码
